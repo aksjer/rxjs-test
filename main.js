@@ -7,7 +7,7 @@ const b = str => new Observable(observer => {
 });
 
 a
-    .first()
+    // .first()
     .do(e => console.log('#1 ' + JSON.stringify(e)))
     .map(e => e.params)
     .do(e => console.log('#2 ' + e))
