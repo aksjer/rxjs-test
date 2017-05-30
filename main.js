@@ -57,7 +57,7 @@ b$
     // })
     // .concat(c$)
     .merge(c$)
-    .subscribe(observer);
+// .subscribe(observer);
 // var liste1 = [[0, 1], [2, 3], [4, 5]];
 // var liste2 = [0, [1, [2, [3, [4, [5]]]]]];
 
@@ -76,3 +76,12 @@ b$
 // });
 // console.log(JSON.stringify(nombres));
 
+Rx.Observable.range(1, 10)
+    // .take(5)
+    // .min()
+    // .max()
+    // .average()
+    // .count()
+    // .scan((a, b) => a + b)
+    // .reduce((a, b) => a + b)
+    .subscribe(observer)
