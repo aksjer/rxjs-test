@@ -37,12 +37,14 @@ const b$ = Rx.Observable.zip(
     Rx.Observable.from(people),
     // Rx.Observable.from(fruits),
     (a, b) => b)
+// .first(e => e.age > 20)
 // .subscribe(observer);
 const c$ = Rx.Observable.zip(
     Rx.Observable.timer(0, 1500),
     Rx.Observable.from(fruits),
     // Rx.Observable.from(fruits),
-    (a, b) => b);
+    (a, b) => b)
+
 // .debounceTime(1000)
 // .throttleTime(1000)
 // .subscribe(observer);
@@ -53,6 +55,7 @@ b$
     //     debugger
     //     return c$
     // })
+    // .concat(c$)
     .merge(c$)
     .subscribe(observer);
 // var liste1 = [[0, 1], [2, 3], [4, 5]];
