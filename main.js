@@ -76,7 +76,15 @@ b$
 // });
 // console.log(JSON.stringify(nombres));
 
-Rx.Observable.range(1, 10)
+Rx.Observable.range(1, 10).zip(
+    Rx.Observable.timer(0, 1000),
+    e => e
+)
+    // .throttleTime(2000)
+    .debounceTime(1100)
+    .subscribe(observer)
+
+Rx.Observable.range(10, 150)
     // .take(5)
     // .min()
     // .max()
@@ -84,4 +92,7 @@ Rx.Observable.range(1, 10)
     // .count()
     // .scan((a, b) => a + b)
     // .reduce((a, b) => a + b)
-    .subscribe(observer)
+    // .subscribe(observer)
+
+    // throttleTime => prendre premier apres x times
+    // debounceTime => prendre dernier apres x times
