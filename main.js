@@ -96,3 +96,19 @@ Rx.Observable.range(10, 150)
 
     // throttleTime => prendre premier apres x times
     // debounceTime => prendre dernier apres x times
+
+Observable
+      .from([
+        // { value: 'a', time: 2000 },
+        { value: 'b', time: 1500 },
+        // { value: 'c', time: 0 }
+      ])
+      // .flatMap(obj => {
+        // .switchMap(obj => {
+        // .concatMap(obj => {
+        .map(obj => {
+        console.log(obj);
+        return Observable.of(obj.value).delay(obj.time);
+      })
+      .subscribe(observer);
+
