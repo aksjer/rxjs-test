@@ -112,3 +112,10 @@ Observable
       })
       .subscribe(observer);
 
+// import 'rxjs/add/observable/interval';
+// import { take, tap, share } from 'rxjs/operators';
+// const src = Observable.interval(2000).pipe(take(3), tap(() => console.log('side effects')), share());
+// src.subscribe(e => console.log(e));
+// src.subscribe(e => console.log(e));
+// src.subscribe(e => console.log(e));
+
